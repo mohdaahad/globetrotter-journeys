@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Search, MapPin, User, Menu, X } from 'lucide-react';
 
@@ -27,23 +28,23 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="/" className="text-2xl font-display text-foreground font-semibold">
+        <Link to="/" className="text-2xl font-display text-foreground font-semibold">
           Globetrotter
-        </a>
+        </Link>
 
         <nav className={cn('hidden md:flex items-center space-x-8 text-sm font-medium')}>
-          <a href="#destinations" className="text-foreground/80 hover:text-foreground transition-colors">
+          <Link to="/#destinations" className="text-foreground/80 hover:text-foreground transition-colors">
             Destinations
-          </a>
-          <a href="#experiences" className="text-foreground/80 hover:text-foreground transition-colors">
+          </Link>
+          <Link to="/#experiences" className="text-foreground/80 hover:text-foreground transition-colors">
             Experiences
-          </a>
-          <a href="#planning" className="text-foreground/80 hover:text-foreground transition-colors">
+          </Link>
+          <Link to="/#planning" className="text-foreground/80 hover:text-foreground transition-colors">
             Trip Planning
-          </a>
-          <a href="#about" className="text-foreground/80 hover:text-foreground transition-colors">
+          </Link>
+          <Link to="/about" className="text-foreground/80 hover:text-foreground transition-colors">
             About Us
-          </a>
+          </Link>
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
@@ -53,10 +54,10 @@ const Navbar = () => {
           <button className="p-2 rounded-full text-foreground/70 hover:text-foreground transition-colors hover:bg-accent">
             <MapPin size={20} />
           </button>
-          <button className="btn-outline py-2 px-4">
+          <Link to="/signin" className="btn-outline py-2 px-4">
             <User size={18} className="mr-2 inline" />
             Sign In
-          </button>
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -72,18 +73,18 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden glass mt-4 rounded-xl p-4 mx-4 animate-slide-down">
           <nav className="flex flex-col space-y-4 text-sm font-medium">
-            <a href="#destinations" className="text-foreground/80 hover:text-foreground transition-colors p-2">
+            <Link to="/#destinations" className="text-foreground/80 hover:text-foreground transition-colors p-2">
               Destinations
-            </a>
-            <a href="#experiences" className="text-foreground/80 hover:text-foreground transition-colors p-2">
+            </Link>
+            <Link to="/#experiences" className="text-foreground/80 hover:text-foreground transition-colors p-2">
               Experiences
-            </a>
-            <a href="#planning" className="text-foreground/80 hover:text-foreground transition-colors p-2">
+            </Link>
+            <Link to="/#planning" className="text-foreground/80 hover:text-foreground transition-colors p-2">
               Trip Planning
-            </a>
-            <a href="#about" className="text-foreground/80 hover:text-foreground transition-colors p-2">
+            </Link>
+            <Link to="/about" className="text-foreground/80 hover:text-foreground transition-colors p-2">
               About Us
-            </a>
+            </Link>
             <div className="flex items-center space-x-4 pt-2">
               <button className="p-2 rounded-full text-foreground/70 hover:text-foreground transition-colors hover:bg-accent">
                 <Search size={20} />
@@ -91,10 +92,10 @@ const Navbar = () => {
               <button className="p-2 rounded-full text-foreground/70 hover:text-foreground transition-colors hover:bg-accent">
                 <MapPin size={20} />
               </button>
-              <button className="btn-outline py-2 px-4 flex-1 flex items-center justify-center">
+              <Link to="/signin" className="btn-outline py-2 px-4 flex-1 flex items-center justify-center">
                 <User size={18} className="mr-2" />
                 Sign In
-              </button>
+              </Link>
             </div>
           </nav>
         </div>
