@@ -9,7 +9,7 @@ const backgrounds = [
 ];
 
 const headings = [
-  'Discover the world's most breathtaking destinations',
+  "Discover the world's most breathtaking destinations",
   'Experience unforgettable adventures',
   'Create memories that last a lifetime',
 ];
