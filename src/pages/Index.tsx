@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -8,23 +7,17 @@ import Footer from '@/components/Footer';
 import { Globe, Compass, HeartHandshake, Clock, Play } from 'lucide-react';
 
 const Index = () => {
-  // Enable smooth scrolling effect when scrolling down
   useEffect(() => {
     const handleScroll = () => {
       const elements = document.querySelectorAll('.scroll-trigger');
       elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight * 0.8;
-        if (isVisible) {
-          el.classList.add('animate-slide-up');
-        }
+        el.classList.add('animate-slide-up');
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {};
   }, []);
 
   return (
@@ -35,7 +28,7 @@ const Index = () => {
       
       {/* Why Choose Us Section */}
       <section className="section">
-        <div className="text-center mb-16 scroll-trigger opacity-0">
+        <div className="text-center mb-16 scroll-trigger">
           <span className="text-sm font-medium text-primary uppercase tracking-wider">
             Travel With Confidence
           </span>
@@ -47,7 +40,7 @@ const Index = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex flex-col items-center text-center p-6 scroll-trigger opacity-0">
+          <div className="flex flex-col items-center text-center p-6 scroll-trigger">
             <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-4">
               <Globe className="text-primary" size={28} />
             </div>
@@ -57,7 +50,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="flex flex-col items-center text-center p-6 scroll-trigger opacity-0">
+          <div className="flex flex-col items-center text-center p-6 scroll-trigger">
             <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-4">
               <Compass className="text-primary" size={28} />
             </div>
@@ -67,7 +60,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="flex flex-col items-center text-center p-6 scroll-trigger opacity-0">
+          <div className="flex flex-col items-center text-center p-6 scroll-trigger">
             <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-4">
               <HeartHandshake className="text-primary" size={28} />
             </div>
@@ -77,7 +70,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="flex flex-col items-center text-center p-6 scroll-trigger opacity-0">
+          <div className="flex flex-col items-center text-center p-6 scroll-trigger">
             <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-4">
               <Clock className="text-primary" size={28} />
             </div>
@@ -104,7 +97,7 @@ const Index = () => {
         
         <div className="section relative z-10 text-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="scroll-trigger opacity-0">
+            <div className="scroll-trigger">
               <span className="text-sm font-medium text-white/90 uppercase tracking-wider">
                 Beyond Destinations
               </span>
@@ -141,7 +134,7 @@ const Index = () => {
               </button>
             </div>
             
-            <div className="relative scroll-trigger opacity-0">
+            <div className="relative scroll-trigger">
               <div className="aspect-video rounded-2xl overflow-hidden shadow-xl">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <button className="w-20 h-20 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors group">
@@ -161,7 +154,7 @@ const Index = () => {
       
       {/* Trip Planning CTA */}
       <section className="section" id="planning">
-        <div className="glass rounded-3xl p-8 md:p-12 scroll-trigger opacity-0">
+        <div className="glass rounded-3xl p-8 md:p-12 scroll-trigger">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
               <span className="text-sm font-medium text-primary uppercase tracking-wider">

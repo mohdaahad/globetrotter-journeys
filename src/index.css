@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -112,9 +111,13 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Fix for scroll trigger animation */
+/* Fix for scroll trigger animation - make sections visible by default */
+.scroll-trigger {
+  @apply opacity-100;
+}
+
 .scroll-trigger.animate-slide-up {
-  @apply opacity-1;
+  @apply opacity-100;
 }
 
 @layer components {
