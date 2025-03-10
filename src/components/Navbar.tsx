@@ -17,6 +17,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleScrollToSection = (id: string) => {
+    setIsMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -33,15 +41,24 @@ const Navbar = () => {
         </Link>
 
         <nav className={cn('hidden md:flex items-center space-x-8 text-sm font-medium')}>
-          <Link to="/#destinations" className="text-foreground/80 hover:text-foreground transition-colors">
+          <button 
+            onClick={() => handleScrollToSection('destinations')} 
+            className="text-foreground/80 hover:text-foreground transition-colors"
+          >
             Destinations
-          </Link>
-          <Link to="/#experiences" className="text-foreground/80 hover:text-foreground transition-colors">
+          </button>
+          <button 
+            onClick={() => handleScrollToSection('experiences')} 
+            className="text-foreground/80 hover:text-foreground transition-colors"
+          >
             Experiences
-          </Link>
-          <Link to="/#planning" className="text-foreground/80 hover:text-foreground transition-colors">
+          </button>
+          <button 
+            onClick={() => handleScrollToSection('planning')} 
+            className="text-foreground/80 hover:text-foreground transition-colors"
+          >
             Trip Planning
-          </Link>
+          </button>
           <Link to="/about" className="text-foreground/80 hover:text-foreground transition-colors">
             About Us
           </Link>
@@ -73,15 +90,24 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden glass mt-4 rounded-xl p-4 mx-4 animate-slide-down">
           <nav className="flex flex-col space-y-4 text-sm font-medium">
-            <Link to="/#destinations" className="text-foreground/80 hover:text-foreground transition-colors p-2">
+            <button 
+              onClick={() => handleScrollToSection('destinations')} 
+              className="text-foreground/80 hover:text-foreground transition-colors p-2 text-left"
+            >
               Destinations
-            </Link>
-            <Link to="/#experiences" className="text-foreground/80 hover:text-foreground transition-colors p-2">
+            </button>
+            <button 
+              onClick={() => handleScrollToSection('experiences')} 
+              className="text-foreground/80 hover:text-foreground transition-colors p-2 text-left"
+            >
               Experiences
-            </Link>
-            <Link to="/#planning" className="text-foreground/80 hover:text-foreground transition-colors p-2">
+            </button>
+            <button 
+              onClick={() => handleScrollToSection('planning')} 
+              className="text-foreground/80 hover:text-foreground transition-colors p-2 text-left"
+            >
               Trip Planning
-            </Link>
+            </button>
             <Link to="/about" className="text-foreground/80 hover:text-foreground transition-colors p-2">
               About Us
             </Link>

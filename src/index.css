@@ -112,6 +112,11 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
+/* Fix for scroll trigger animation */
+.scroll-trigger.animate-slide-up {
+  @apply opacity-1;
+}
+
 @layer components {
   .btn-primary {
     @apply bg-primary text-primary-foreground rounded-full px-6 py-3 font-medium transition-all hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:ring-offset-2 active:scale-95;
